@@ -60,15 +60,15 @@
         
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-value">5</div>
+                <div class="stat-value">10</div>
                 <div class="stat-label">新闻节点</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">3</div>
+                <div class="stat-value">17</div>
                 <div class="stat-label">关联关系</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">1</div>
+                <div class="stat-value">3</div>
                 <div class="stat-label">话题聚类</div>
             </div>
         </div>
@@ -83,8 +83,8 @@
     <script>
         const chart = echarts.init(document.getElementById('network-chart'));
         
-        const nodes = [{"id": "news-2026030417-001", "title": "AGI安全框架全球协议达成", "heat": 98.5, "category": "科技", "full_title": "AGI安全框架全球协议达成"}, {"id": "news-2026030417-002", "title": "亚洲数字货币联盟正式启动", "heat": 95.2, "category": "经济", "full_title": "亚洲数字货币联盟正式启动"}, {"id": "news-2026030417-003", "title": "北极资源开发国际公约签署", "heat": 92.0, "category": "政治", "full_title": "北极资源开发国际公约签署"}, {"id": "news-2026030417-004", "title": "全球首例脑机接口商业应用获批", "heat": 89.5, "category": "科技", "full_title": "全球首例脑机接口商业应用获批"}, {"id": "news-2026030417-005", "title": "量子计算破解RSA加密演示", "heat": 87.3, "category": "科技", "full_title": "量子计算破解RSA加密演示"}];
-        const links = [{"source": "news-2026030417-001", "target": "news-2026030417-004", "strength": 0.35, "type": "weak"}, {"source": "news-2026030417-001", "target": "news-2026030417-005", "strength": 0.35, "type": "weak"}, {"source": "news-2026030417-004", "target": "news-2026030417-005", "strength": 0.35, "type": "weak"}];
+        const nodes = [{"id": "news-2026030418-001", "title": "AGI安全框架全球协议达成", "heat": 98.5, "category": "科技", "full_title": "AGI安全框架全球协议达成"}, {"id": "news-2026030418-002", "title": "亚洲数字货币联盟正式启动", "heat": 95.2, "category": "经济", "full_title": "亚洲数字货币联盟正式启动"}, {"id": "news-2026030418-003", "title": "北极资源开发国际公约签署", "heat": 92.0, "category": "政治", "full_title": "北极资源开发国际公约签署"}, {"id": "news-2026030418-004", "title": "全球首例脑机接口商业应用获批", "heat": 89.5, "category": "科技", "full_title": "全球首例脑机接口商业应用获批"}, {"id": "news-2026030418-005", "title": "量子计算破解RSA加密演示", "heat": 87.3, "category": "科技", "full_title": "量子计算破解RSA加密演示"}, {"id": "news-2026030417-001", "title": "AGI安全框架全球协议达成", "heat": 98.5, "category": "科技", "full_title": "AGI安全框架全球协议达成"}, {"id": "news-2026030417-002", "title": "亚洲数字货币联盟正式启动", "heat": 95.2, "category": "经济", "full_title": "亚洲数字货币联盟正式启动"}, {"id": "news-2026030417-003", "title": "北极资源开发国际公约签署", "heat": 92.0, "category": "政治", "full_title": "北极资源开发国际公约签署"}, {"id": "news-2026030417-004", "title": "全球首例脑机接口商业应用获批", "heat": 89.5, "category": "科技", "full_title": "全球首例脑机接口商业应用获批"}, {"id": "news-2026030417-005", "title": "量子计算破解RSA加密演示", "heat": 87.3, "category": "科技", "full_title": "量子计算破解RSA加密演示"}];
+        const links = [{"source": "news-2026030418-001", "target": "news-2026030418-004", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-001", "target": "news-2026030418-005", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-001", "target": "news-2026030417-001", "strength": 1.0, "type": "strong"}, {"source": "news-2026030418-001", "target": "news-2026030417-004", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-001", "target": "news-2026030417-005", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-002", "target": "news-2026030417-002", "strength": 1.0, "type": "strong"}, {"source": "news-2026030418-003", "target": "news-2026030417-003", "strength": 1.0, "type": "strong"}, {"source": "news-2026030418-004", "target": "news-2026030418-005", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-004", "target": "news-2026030417-001", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-004", "target": "news-2026030417-004", "strength": 1.0, "type": "strong"}, {"source": "news-2026030418-004", "target": "news-2026030417-005", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-005", "target": "news-2026030417-001", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-005", "target": "news-2026030417-004", "strength": 0.35, "type": "weak"}, {"source": "news-2026030418-005", "target": "news-2026030417-005", "strength": 1.0, "type": "strong"}, {"source": "news-2026030417-001", "target": "news-2026030417-004", "strength": 0.35, "type": "weak"}, {"source": "news-2026030417-001", "target": "news-2026030417-005", "strength": 0.35, "type": "weak"}, {"source": "news-2026030417-004", "target": "news-2026030417-005", "strength": 0.35, "type": "weak"}];
         
         const option = {
             backgroundColor: 'transparent',

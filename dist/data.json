@@ -2,17 +2,17 @@
   "meta": {
     "title": "News Intelligence Hub - 热点新闻智能分析",
     "description": "自动化新闻聚合与关联分析平台",
-    "updated_at": "2026-03-04T17:40:16.620561",
+    "updated_at": "2026-03-04T18:14:07.292067",
     "version": "1.0.0"
   },
   "rankings": {
     "hourly": {
       "type": "hourly",
-      "timestamp": "2026-03-04T17:39:04.082846",
-      "period": "2026-03-04-17",
+      "timestamp": "2026-03-04T18:13:59.863818",
+      "period": "2026-03-04-18",
       "news": [
         {
-          "id": "news-2026030417-001",
+          "id": "news-2026030418-001",
           "title": "AGI安全框架全球协议达成",
           "summary": "全球42个国家签署首个具有法律约束力的AGI开发安全协议...",
           "source": "Reuters",
@@ -29,13 +29,13 @@
             "人工智能监管",
             "安全协议"
           ],
-          "published_at": "2026-03-04T17:39:00.272691",
+          "published_at": "2026-03-04T18:13:55.058993",
           "url": "https://example.com/news/001",
           "rank": 1,
           "heat_trend": "+0.0"
         },
         {
-          "id": "news-2026030417-002",
+          "id": "news-2026030418-002",
           "title": "亚洲数字货币联盟正式启动",
           "summary": "15个亚太经济体共同推出基于区块链的跨境结算系统...",
           "source": "Bloomberg",
@@ -52,13 +52,13 @@
             "CBDC",
             "区块链"
           ],
-          "published_at": "2026-03-04T17:24:00.272691",
+          "published_at": "2026-03-04T17:58:55.058993",
           "url": "https://example.com/news/002",
           "rank": 2,
           "heat_trend": "+0.0"
         },
         {
-          "id": "news-2026030417-003",
+          "id": "news-2026030418-003",
           "title": "北极资源开发国际公约签署",
           "summary": "北极理事会成员国就资源开发环境保护达成历史性协议...",
           "source": "The Guardian",
@@ -75,13 +75,13 @@
             "资源开发",
             "环境保护"
           ],
-          "published_at": "2026-03-04T17:09:00.272691",
+          "published_at": "2026-03-04T17:43:55.058993",
           "url": "https://example.com/news/003",
           "rank": 3,
           "heat_trend": "+0.0"
         },
         {
-          "id": "news-2026030417-004",
+          "id": "news-2026030418-004",
           "title": "全球首例脑机接口商业应用获批",
           "summary": "FDA批准Neuralink开展人体临床试验，脑机接口进入商用阶段...",
           "source": "TechCrunch",
@@ -98,13 +98,13 @@
             "Neuralink",
             "医疗科技"
           ],
-          "published_at": "2026-03-04T16:54:00.272691",
+          "published_at": "2026-03-04T17:28:55.058993",
           "url": "https://example.com/news/004",
           "rank": 4,
           "heat_trend": "+0.0"
         },
         {
-          "id": "news-2026030417-005",
+          "id": "news-2026030418-005",
           "title": "量子计算破解RSA加密演示",
           "summary": "IBM展示1000量子比特计算机成功破解2048位RSA加密...",
           "source": "MIT Technology Review",
@@ -121,7 +121,7 @@
             "网络安全",
             "RSA"
           ],
-          "published_at": "2026-03-04T16:39:00.272691",
+          "published_at": "2026-03-04T17:13:55.058993",
           "url": "https://example.com/news/005",
           "rank": 5,
           "heat_trend": "+0.0"
@@ -139,6 +139,127 @@
   },
   "history": {
     "hourly": [
+      {
+        "period": "2026-03-04-18",
+        "timestamp": "2026-03-04T18:13:59.863818",
+        "top_news": [
+          {
+            "id": "news-2026030418-001",
+            "title": "AGI安全框架全球协议达成",
+            "summary": "全球42个国家签署首个具有法律约束力的AGI开发安全协议...",
+            "source": "Reuters",
+            "category": "科技",
+            "heat": 98.5,
+            "impact": {
+              "social": 95,
+              "economic": 88,
+              "political": 92,
+              "tech": 99
+            },
+            "keywords": [
+              "AGI",
+              "人工智能监管",
+              "安全协议"
+            ],
+            "published_at": "2026-03-04T18:13:55.058993",
+            "url": "https://example.com/news/001",
+            "rank": 1,
+            "heat_trend": "+0.0"
+          },
+          {
+            "id": "news-2026030418-002",
+            "title": "亚洲数字货币联盟正式启动",
+            "summary": "15个亚太经济体共同推出基于区块链的跨境结算系统...",
+            "source": "Bloomberg",
+            "category": "经济",
+            "heat": 95.2,
+            "impact": {
+              "social": 72,
+              "economic": 98,
+              "political": 85,
+              "tech": 90
+            },
+            "keywords": [
+              "数字货币",
+              "CBDC",
+              "区块链"
+            ],
+            "published_at": "2026-03-04T17:58:55.058993",
+            "url": "https://example.com/news/002",
+            "rank": 2,
+            "heat_trend": "+0.0"
+          },
+          {
+            "id": "news-2026030418-003",
+            "title": "北极资源开发国际公约签署",
+            "summary": "北极理事会成员国就资源开发环境保护达成历史性协议...",
+            "source": "The Guardian",
+            "category": "政治",
+            "heat": 92.0,
+            "impact": {
+              "social": 85,
+              "economic": 90,
+              "political": 95,
+              "tech": 60
+            },
+            "keywords": [
+              "北极",
+              "资源开发",
+              "环境保护"
+            ],
+            "published_at": "2026-03-04T17:43:55.058993",
+            "url": "https://example.com/news/003",
+            "rank": 3,
+            "heat_trend": "+0.0"
+          },
+          {
+            "id": "news-2026030418-004",
+            "title": "全球首例脑机接口商业应用获批",
+            "summary": "FDA批准Neuralink开展人体临床试验，脑机接口进入商用阶段...",
+            "source": "TechCrunch",
+            "category": "科技",
+            "heat": 89.5,
+            "impact": {
+              "social": 90,
+              "economic": 75,
+              "political": 60,
+              "tech": 98
+            },
+            "keywords": [
+              "脑机接口",
+              "Neuralink",
+              "医疗科技"
+            ],
+            "published_at": "2026-03-04T17:28:55.058993",
+            "url": "https://example.com/news/004",
+            "rank": 4,
+            "heat_trend": "+0.0"
+          },
+          {
+            "id": "news-2026030418-005",
+            "title": "量子计算破解RSA加密演示",
+            "summary": "IBM展示1000量子比特计算机成功破解2048位RSA加密...",
+            "source": "MIT Technology Review",
+            "category": "科技",
+            "heat": 87.3,
+            "impact": {
+              "social": 70,
+              "economic": 85,
+              "political": 80,
+              "tech": 99
+            },
+            "keywords": [
+              "量子计算",
+              "网络安全",
+              "RSA"
+            ],
+            "published_at": "2026-03-04T17:13:55.058993",
+            "url": "https://example.com/news/005",
+            "rank": 5,
+            "heat_trend": "+0.0"
+          }
+        ]
+      },
       {
         "period": "2026-03-04-17",
         "timestamp": "2026-03-04T17:39:04.082846",
@@ -266,8 +387,43 @@
     "monthly": []
   },
   "relations": {
-    "timestamp": "2026-03-04T17:39:08.810729",
+    "timestamp": "2026-03-04T18:14:03.263383",
     "nodes": [
+      {
+        "id": "news-2026030418-001",
+        "title": "AGI安全框架全球协议达成",
+        "heat": 98.5,
+        "category": "科技",
+        "full_title": "AGI安全框架全球协议达成"
+      },
+      {
+        "id": "news-2026030418-002",
+        "title": "亚洲数字货币联盟正式启动",
+        "heat": 95.2,
+        "category": "经济",
+        "full_title": "亚洲数字货币联盟正式启动"
+      },
+      {
+        "id": "news-2026030418-003",
+        "title": "北极资源开发国际公约签署",
+        "heat": 92.0,
+        "category": "政治",
+        "full_title": "北极资源开发国际公约签署"
+      },
+      {
+        "id": "news-2026030418-004",
+        "title": "全球首例脑机接口商业应用获批",
+        "heat": 89.5,
+        "category": "科技",
+        "full_title": "全球首例脑机接口商业应用获批"
+      },
+      {
+        "id": "news-2026030418-005",
+        "title": "量子计算破解RSA加密演示",
+        "heat": 87.3,
+        "category": "科技",
+        "full_title": "量子计算破解RSA加密演示"
+      },
       {
         "id": "news-2026030417-001",
         "title": "AGI安全框架全球协议达成",
@@ -306,6 +462,90 @@
     ],
     "links": [
       {
+        "source": "news-2026030418-001",
+        "target": "news-2026030418-004",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-001",
+        "target": "news-2026030418-005",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-001",
+        "target": "news-2026030417-001",
+        "strength": 1.0,
+        "type": "strong"
+      },
+      {
+        "source": "news-2026030418-001",
+        "target": "news-2026030417-004",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-001",
+        "target": "news-2026030417-005",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-002",
+        "target": "news-2026030417-002",
+        "strength": 1.0,
+        "type": "strong"
+      },
+      {
+        "source": "news-2026030418-003",
+        "target": "news-2026030417-003",
+        "strength": 1.0,
+        "type": "strong"
+      },
+      {
+        "source": "news-2026030418-004",
+        "target": "news-2026030418-005",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-004",
+        "target": "news-2026030417-001",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-004",
+        "target": "news-2026030417-004",
+        "strength": 1.0,
+        "type": "strong"
+      },
+      {
+        "source": "news-2026030418-004",
+        "target": "news-2026030417-005",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-005",
+        "target": "news-2026030417-001",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-005",
+        "target": "news-2026030417-004",
+        "strength": 0.35,
+        "type": "weak"
+      },
+      {
+        "source": "news-2026030418-005",
+        "target": "news-2026030417-005",
+        "strength": 1.0,
+        "type": "strong"
+      },
+      {
         "source": "news-2026030417-001",
         "target": "news-2026030417-004",
         "strength": 0.35,
@@ -329,21 +569,44 @@
         "id": "cluster-1",
         "name": "AGI安全框架全球协议达成",
         "nodes": [
-          "news-2026030417-001",
+          "news-2026030418-001",
+          "news-2026030417-004",
+          "news-2026030418-004",
+          "news-2026030418-005",
           "news-2026030417-005",
-          "news-2026030417-004"
+          "news-2026030417-001"
         ],
-        "size": 3,
+        "size": 6,
+        "density": 1.0
+      },
+      {
+        "id": "cluster-2",
+        "name": "亚洲数字货币联盟正式启动",
+        "nodes": [
+          "news-2026030418-002",
+          "news-2026030417-002"
+        ],
+        "size": 2,
+        "density": 1.0
+      },
+      {
+        "id": "cluster-3",
+        "name": "北极资源开发国际公约签署",
+        "nodes": [
+          "news-2026030418-003",
+          "news-2026030417-003"
+        ],
+        "size": 2,
         "density": 1.0
       }
     ],
     "stats": {
-      "total_nodes": 5,
-      "total_links": 3,
-      "total_clusters": 1,
-      "strong_relations": 0,
+      "total_nodes": 10,
+      "total_links": 17,
+      "total_clusters": 3,
+      "strong_relations": 5,
       "medium_relations": 0,
-      "weak_relations": 3
+      "weak_relations": 12
     }
   }
 }
