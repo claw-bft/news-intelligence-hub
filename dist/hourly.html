@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小时热榜 - News Intelligence Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; border-bottom: 1px solid #333; }
+        h1 { font-size: 2rem; color: #00d4ff; }
+        .subtitle { color: #888; margin-top: 10px; }
+        
+        .nav { display: flex; justify-content: center; gap: 20px; padding: 20px 0; flex-wrap: wrap; }
+        .nav a { 
+            color: #888; text-decoration: none; padding: 10px 20px; 
+            border-radius: 8px; transition: all 0.3s;
+        }
+        .nav a:hover, .nav a.active { background: #1a1a25; color: #00d4ff; }
+        
+        .ranking-list { margin-top: 30px; }
+        .news-item { 
+            display: flex; align-items: flex-start; padding: 20px 0;
+            border-bottom: 1px solid #2a2a35;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .rank { 
+            width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1rem; margin-right: 16px;
+            flex-shrink: 0;
+        }
+        .rank.top3 { background: linear-gradient(135deg, #ffd700, #ff6b6b); color: #000; }
+        .rank { background: #2a2a35; color: #888; }
+        
+        .news-content { flex: 1; }
+        .news-title { font-size: 1.1rem; color: #fff; margin-bottom: 8px; }
+        .news-meta { font-size: 0.85rem; color: #666; display: flex; gap: 15px; flex-wrap: wrap; }
+        .heat { color: #ff6b6b; font-weight: bold; }
+        .category { color: #00d4ff; }
+        
+        footer { text-align: center; padding: 40px 0; color: #666; border-top: 1px solid #333; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>小时热榜</h1>
+            <p class="subtitle">每小时更新</p>
+        </header>
+        
+        <nav class="nav">
+            <a href="index.html">首页</a>
+            <a href="hourly.html" class="active">小时榜</a>
+            <a href="daily.html" >日榜</a>
+            <a href="weekly.html" >周榜</a>
+            <a href="monthly.html" >月榜</a>
+            <a href="yearly.html" >年榜</a>
+            <a href="relations.html">关联网络</a>
+        </nav>
+        
+        <div class="ranking-list">
+            
+            <div class="news-item" style="padding: 20px 0;">
+                <div class="rank top3" style="width: 36px; height: 36px; font-size: 1rem;">1</div>
+                <div class="news-content">
+                    <div class="news-title" style="font-size: 1.1rem;">AGI安全框架全球协议达成</div>
+                    <div style="color: #888; margin-top: 8px; font-size: 0.9rem;">全球42个国家签署首个具有法律约束力的AGI开发安全协议...</div>
+                    <div class="news-meta" style="margin-top: 10px;">
+                        <span class="heat">🔥 98.5</span>
+                        <span class="category">科技</span>
+                        <span style="color: #666;">Reuters</span>
+                    </div>
+                    <div style="margin-top: 8px; display: flex; gap: 10px; font-size: 0.75rem;">
+                <span style="color: #888;">社会影响: 95</span>
+                <span style="color: #888;">经济影响: 88</span>
+                <span style="color: #888;">政治影响: 92</span>
+                <span style="color: #888;">科技影响: 99</span>
+            </div>
+                </div>
+            </div>
+            <div class="news-item" style="padding: 20px 0;">
+                <div class="rank top3" style="width: 36px; height: 36px; font-size: 1rem;">2</div>
+                <div class="news-content">
+                    <div class="news-title" style="font-size: 1.1rem;">亚洲数字货币联盟正式启动</div>
+                    <div style="color: #888; margin-top: 8px; font-size: 0.9rem;">15个亚太经济体共同推出基于区块链的跨境结算系统...</div>
+                    <div class="news-meta" style="margin-top: 10px;">
+                        <span class="heat">🔥 95.2</span>
+                        <span class="category">经济</span>
+                        <span style="color: #666;">Bloomberg</span>
+                    </div>
+                    <div style="margin-top: 8px; display: flex; gap: 10px; font-size: 0.75rem;">
+                <span style="color: #888;">社会影响: 72</span>
+                <span style="color: #888;">经济影响: 98</span>
+                <span style="color: #888;">政治影响: 85</span>
+                <span style="color: #888;">科技影响: 90</span>
+            </div>
+                </div>
+            </div>
+            <div class="news-item" style="padding: 20px 0;">
+                <div class="rank top3" style="width: 36px; height: 36px; font-size: 1rem;">3</div>
+                <div class="news-content">
+                    <div class="news-title" style="font-size: 1.1rem;">北极资源开发国际公约签署</div>
+                    <div style="color: #888; margin-top: 8px; font-size: 0.9rem;">北极理事会成员国就资源开发环境保护达成历史性协议...</div>
+                    <div class="news-meta" style="margin-top: 10px;">
+                        <span class="heat">🔥 92.0</span>
+                        <span class="category">政治</span>
+                        <span style="color: #666;">The Guardian</span>
+                    </div>
+                    <div style="margin-top: 8px; display: flex; gap: 10px; font-size: 0.75rem;">
+                <span style="color: #888;">社会影响: 85</span>
+                <span style="color: #888;">经济影响: 90</span>
+                <span style="color: #888;">政治影响: 95</span>
+                <span style="color: #888;">科技影响: 60</span>
+            </div>
+                </div>
+            </div>
+            <div class="news-item" style="padding: 20px 0;">
+                <div class="rank " style="width: 36px; height: 36px; font-size: 1rem;">4</div>
+                <div class="news-content">
+                    <div class="news-title" style="font-size: 1.1rem;">全球首例脑机接口商业应用获批</div>
+                    <div style="color: #888; margin-top: 8px; font-size: 0.9rem;">FDA批准Neuralink开展人体临床试验，脑机接口进入商用阶段...</div>
+                    <div class="news-meta" style="margin-top: 10px;">
+                        <span class="heat">🔥 89.5</span>
+                        <span class="category">科技</span>
+                        <span style="color: #666;">TechCrunch</span>
+                    </div>
+                    <div style="margin-top: 8px; display: flex; gap: 10px; font-size: 0.75rem;">
+                <span style="color: #888;">社会影响: 90</span>
+                <span style="color: #888;">经济影响: 75</span>
+                <span style="color: #888;">政治影响: 60</span>
+                <span style="color: #888;">科技影响: 98</span>
+            </div>
+                </div>
+            </div>
+            <div class="news-item" style="padding: 20px 0;">
+                <div class="rank " style="width: 36px; height: 36px; font-size: 1rem;">5</div>
+                <div class="news-content">
+                    <div class="news-title" style="font-size: 1.1rem;">量子计算破解RSA加密演示</div>
+                    <div style="color: #888; margin-top: 8px; font-size: 0.9rem;">IBM展示1000量子比特计算机成功破解2048位RSA加密...</div>
+                    <div class="news-meta" style="margin-top: 10px;">
+                        <span class="heat">🔥 87.3</span>
+                        <span class="category">科技</span>
+                        <span style="color: #666;">MIT Technology Review</span>
+                    </div>
+                    <div style="margin-top: 8px; display: flex; gap: 10px; font-size: 0.75rem;">
+                <span style="color: #888;">社会影响: 70</span>
+                <span style="color: #888;">经济影响: 85</span>
+                <span style="color: #888;">政治影响: 80</span>
+                <span style="color: #888;">科技影响: 99</span>
+            </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>News Intelligence Hub · 自动化新闻聚合与分析</p>
+        </footer>
+    </div>
+</body>
+</html>

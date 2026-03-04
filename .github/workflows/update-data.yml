@@ -1,0 +1,65 @@
+name: Update News Data and Deploy
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # 每30分钟
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4
+        
+    - name: Scrape news data
+      run: python scripts/scraper.py
+      
+    - name: Generate rankings
+      run: python scripts/rankings.py --type all
+      
+    - name: Analyze relations
+      run: python scripts/relations.py
+      
+    - name: Build site
+      run: python scripts/build.py
+      
+    - name: Commit data changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/
+        git diff --staged --quiet || git commit -m "Update news data: $(date +'%Y-%m-%d %H:%M')"
+        git push
+      continue-on-error: true
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './dist'
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

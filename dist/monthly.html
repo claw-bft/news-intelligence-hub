@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月度大事 - News Intelligence Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; border-bottom: 1px solid #333; }
+        h1 { font-size: 2rem; color: #00d4ff; }
+        .subtitle { color: #888; margin-top: 10px; }
+        
+        .nav { display: flex; justify-content: center; gap: 20px; padding: 20px 0; flex-wrap: wrap; }
+        .nav a { 
+            color: #888; text-decoration: none; padding: 10px 20px; 
+            border-radius: 8px; transition: all 0.3s;
+        }
+        .nav a:hover, .nav a.active { background: #1a1a25; color: #00d4ff; }
+        
+        .ranking-list { margin-top: 30px; }
+        .news-item { 
+            display: flex; align-items: flex-start; padding: 20px 0;
+            border-bottom: 1px solid #2a2a35;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .rank { 
+            width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1rem; margin-right: 16px;
+            flex-shrink: 0;
+        }
+        .rank.top3 { background: linear-gradient(135deg, #ffd700, #ff6b6b); color: #000; }
+        .rank { background: #2a2a35; color: #888; }
+        
+        .news-content { flex: 1; }
+        .news-title { font-size: 1.1rem; color: #fff; margin-bottom: 8px; }
+        .news-meta { font-size: 0.85rem; color: #666; display: flex; gap: 15px; flex-wrap: wrap; }
+        .heat { color: #ff6b6b; font-weight: bold; }
+        .category { color: #00d4ff; }
+        
+        footer { text-align: center; padding: 40px 0; color: #666; border-top: 1px solid #333; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>月度大事</h1>
+            <p class="subtitle">每月1日更新</p>
+        </header>
+        
+        <nav class="nav">
+            <a href="index.html">首页</a>
+            <a href="hourly.html" >小时榜</a>
+            <a href="daily.html" >日榜</a>
+            <a href="weekly.html" >周榜</a>
+            <a href="monthly.html" class="active">月榜</a>
+            <a href="yearly.html" >年榜</a>
+            <a href="relations.html">关联网络</a>
+        </nav>
+        
+        <div class="ranking-list">
+            <p style="color: #666; text-align: center; padding: 60px 0;">暂无数据</p>
+        </div>
+        
+        <footer>
+            <p>News Intelligence Hub · 自动化新闻聚合与分析</p>
+        </footer>
+    </div>
+</body>
+</html>
