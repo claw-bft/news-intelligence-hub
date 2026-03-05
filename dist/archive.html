@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>历史版本 - News Intelligence Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-primary: #00d4ff;
+            --accent-secondary: #7c3aed;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --border-color: #2a2a3a;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: var(--text-secondary);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 30px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
+        
+        .version-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .version-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            transition: all 0.3s;
+        }
+        
+        .version-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+        
+        .version-card.latest {
+            border-color: var(--accent-primary);
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 212, 255, 0.05) 100%);
+        }
+        
+        .version-card.latest::before {
+            content: '最新';
+            position: absolute;
+            top: -1px;
+            right: 20px;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .version-info {
+            flex: 1;
+        }
+        
+        .version-id {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-primary);
+            margin-bottom: 4px;
+        }
+        
+        .version-time {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .version-stats {
+            display: flex;
+            gap: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .version-stats span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .version-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        
+        .btn-primary:hover {
+            background: #33ddff;
+        }
+        
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-secondary);
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .version-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .version-actions {
+                width: 100%;
+            }
+            
+            .btn {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="dashboard.html" class="back-link">← 返回仪表板</a>
+        
+        <div class="header">
+            <h1>📚 历史版本</h1>
+            <p>选择特定版本查看历史数据快照</p>
+        </div>
+        
+        <div id="versionList" class="version-list">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>正在加载版本列表...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Known versions (these would ideally be fetched from the server)
+        const knownVersions = [
+            { id: '20260306-0126', date: '2026-03-06 01:26', news: 10 },
+        ];
+        
+        async function loadVersions() {
+            const container = document.getElementById('versionList');
+            const versions = [];
+            
+            // Try to fetch the latest version info
+            try {
+                const response = await fetch('data.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    const versionId = extractVersionFromTimestamp(data.timestamp);
+                    versions.push({
+                        id: versionId,
+                        date: new Date(data.timestamp).toLocaleString('zh-CN'),
+                        news: data.stats?.total || data.news?.length || 0,
+                        isLatest: true
+                    });
+                }
+            } catch (e) {
+                console.log('Could not fetch latest version');
+            }
+            
+            // Add known historical versions
+            for (const v of knownVersions) {
+                if (!versions.find(x => x.id === v.id)) {
+                    versions.push({
+                        ...v,
+                        isLatest: false
+                    });
+                }
+            }
+            
+            // Sort by version ID descending
+            versions.sort((a, b) => b.id.localeCompare(a.id));
+            
+            if (versions.length === 0) {
+                container.innerHTML = '<div class="loading">暂无历史版本</div>';
+                return;
+            }
+            
+            container.innerHTML = versions.map((v, index) => `
+                <div class="version-card ${v.isLatest ? 'latest' : ''}" style="position: relative;">
+                    <div class="version-info">
+                        <div class="version-id">${v.id}</div>
+                        <div class="version-time">${v.date}</div>
+                    </div>
+                    <div class="version-stats">
+                        <span>📰 ${v.news} 条新闻</span>
+                    </div>
+                    <div class="version-actions">
+                        <a href="dashboard.html?v=${v.id}" class="btn btn-primary">查看</a>
+                        <button class="btn btn-secondary" onclick="copyLink('${v.id}')">复制链接</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function extractVersionFromTimestamp(timestamp) {
+            const date = new Date(timestamp);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hour = String(date.getHours()).padStart(2, '0');
+            const min = String(date.getMinutes()).padStart(2, '0');
+            return `${year}${month}${day}-${hour}${min}`;
+        }
+        
+        function copyLink(versionId) {
+            const url = `${window.location.origin}${window.location.pathname.replace('archive.html', 'dashboard.html')}?v=${versionId}`;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('链接已复制到剪贴板！');
+            }).catch(() => {
+                alert('复制失败');
+            });
+        }
+        
+        // Load versions on page load
+        loadVersions();
+    </script>
+</body>
+</html>
