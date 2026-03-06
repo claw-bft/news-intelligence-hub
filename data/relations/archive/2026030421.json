@@ -1,0 +1,413 @@
+{
+  "timestamp": "2026-03-04T21:19:14.205111",
+  "nodes": [
+    {
+      "id": "news-2026030421-004",
+      "title": "欧盟通过《人工智能法案》最终版本",
+      "heat": 96.7,
+      "category": "政治",
+      "full_title": "欧盟通过《人工智能法案》最终版本"
+    },
+    {
+      "id": "news-2026030421-001",
+      "title": "OpenAI GPT-5 发布：多模态能力重大突破",
+      "heat": 96.0,
+      "category": "科技",
+      "full_title": "OpenAI GPT-5 发布：多模态能力重大突破"
+    },
+    {
+      "id": "news-2026030421-003",
+      "title": "特斯拉 FSD V12 正式推送，端到端神经网络上车",
+      "heat": 93.2,
+      "category": "科技",
+      "full_title": "特斯拉 FSD V12 正式推送，端到端神经网络上车"
+    },
+    {
+      "id": "news-2026030421-005",
+      "title": "英伟达发布 Blackwell 架构 GPU，AI 算力提升...",
+      "heat": 89.2,
+      "category": "科技",
+      "full_title": "英伟达发布 Blackwell 架构 GPU，AI 算力提升 30 倍"
+    },
+    {
+      "id": "news-2026030421-002",
+      "title": "美联储宣布维持利率不变，暗示年内降息",
+      "heat": 88.0,
+      "category": "经济",
+      "full_title": "美联储宣布维持利率不变，暗示年内降息"
+    },
+    {
+      "id": "news-2026030418-001",
+      "title": "AGI安全框架全球协议达成",
+      "heat": 98.5,
+      "category": "科技",
+      "full_title": "AGI安全框架全球协议达成"
+    },
+    {
+      "id": "news-2026030418-002",
+      "title": "亚洲数字货币联盟正式启动",
+      "heat": 95.2,
+      "category": "经济",
+      "full_title": "亚洲数字货币联盟正式启动"
+    },
+    {
+      "id": "news-2026030418-003",
+      "title": "北极资源开发国际公约签署",
+      "heat": 92.0,
+      "category": "政治",
+      "full_title": "北极资源开发国际公约签署"
+    },
+    {
+      "id": "news-2026030418-004",
+      "title": "全球首例脑机接口商业应用获批",
+      "heat": 89.5,
+      "category": "科技",
+      "full_title": "全球首例脑机接口商业应用获批"
+    },
+    {
+      "id": "news-2026030418-005",
+      "title": "量子计算破解RSA加密演示",
+      "heat": 87.3,
+      "category": "科技",
+      "full_title": "量子计算破解RSA加密演示"
+    },
+    {
+      "id": "news-2026030417-001",
+      "title": "AGI安全框架全球协议达成",
+      "heat": 98.5,
+      "category": "科技",
+      "full_title": "AGI安全框架全球协议达成"
+    },
+    {
+      "id": "news-2026030417-002",
+      "title": "亚洲数字货币联盟正式启动",
+      "heat": 95.2,
+      "category": "经济",
+      "full_title": "亚洲数字货币联盟正式启动"
+    },
+    {
+      "id": "news-2026030417-003",
+      "title": "北极资源开发国际公约签署",
+      "heat": 92.0,
+      "category": "政治",
+      "full_title": "北极资源开发国际公约签署"
+    },
+    {
+      "id": "news-2026030417-004",
+      "title": "全球首例脑机接口商业应用获批",
+      "heat": 89.5,
+      "category": "科技",
+      "full_title": "全球首例脑机接口商业应用获批"
+    },
+    {
+      "id": "news-2026030417-005",
+      "title": "量子计算破解RSA加密演示",
+      "heat": 87.3,
+      "category": "科技",
+      "full_title": "量子计算破解RSA加密演示"
+    }
+  ],
+  "links": [
+    {
+      "source": "news-2026030421-004",
+      "target": "news-2026030418-003",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-004",
+      "target": "news-2026030417-003",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030421-003",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030421-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030418-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030418-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030418-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030417-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030417-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-001",
+      "target": "news-2026030417-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-003",
+      "target": "news-2026030421-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-003",
+      "target": "news-2026030418-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-003",
+      "target": "news-2026030418-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-003",
+      "target": "news-2026030418-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-003",
+      "target": "news-2026030417-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-003",
+      "target": "news-2026030417-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-003",
+      "target": "news-2026030417-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-005",
+      "target": "news-2026030418-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-005",
+      "target": "news-2026030418-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-005",
+      "target": "news-2026030418-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-005",
+      "target": "news-2026030417-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-005",
+      "target": "news-2026030417-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-005",
+      "target": "news-2026030417-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-002",
+      "target": "news-2026030418-002",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030421-002",
+      "target": "news-2026030417-002",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-001",
+      "target": "news-2026030418-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-001",
+      "target": "news-2026030418-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-001",
+      "target": "news-2026030417-001",
+      "strength": 1.0,
+      "type": "strong"
+    },
+    {
+      "source": "news-2026030418-001",
+      "target": "news-2026030417-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-001",
+      "target": "news-2026030417-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-002",
+      "target": "news-2026030417-002",
+      "strength": 1.0,
+      "type": "strong"
+    },
+    {
+      "source": "news-2026030418-003",
+      "target": "news-2026030417-003",
+      "strength": 1.0,
+      "type": "strong"
+    },
+    {
+      "source": "news-2026030418-004",
+      "target": "news-2026030418-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-004",
+      "target": "news-2026030417-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-004",
+      "target": "news-2026030417-004",
+      "strength": 1.0,
+      "type": "strong"
+    },
+    {
+      "source": "news-2026030418-004",
+      "target": "news-2026030417-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-005",
+      "target": "news-2026030417-001",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-005",
+      "target": "news-2026030417-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030418-005",
+      "target": "news-2026030417-005",
+      "strength": 1.0,
+      "type": "strong"
+    },
+    {
+      "source": "news-2026030417-001",
+      "target": "news-2026030417-004",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030417-001",
+      "target": "news-2026030417-005",
+      "strength": 0.35,
+      "type": "weak"
+    },
+    {
+      "source": "news-2026030417-004",
+      "target": "news-2026030417-005",
+      "strength": 0.35,
+      "type": "weak"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "cluster-1",
+      "name": "欧盟通过《人工智能法案》最终版本",
+      "nodes": [
+        "news-2026030421-004",
+        "news-2026030418-003",
+        "news-2026030417-003"
+      ],
+      "size": 3,
+      "density": 1.0
+    },
+    {
+      "id": "cluster-2",
+      "name": "AGI安全框架全球协议达成",
+      "nodes": [
+        "news-2026030421-001",
+        "news-2026030417-004",
+        "news-2026030417-005",
+        "news-2026030418-004",
+        "news-2026030421-005",
+        "news-2026030418-005",
+        "news-2026030417-001",
+        "news-2026030418-001",
+        "news-2026030421-003"
+      ],
+      "size": 9,
+      "density": 1.0
+    },
+    {
+      "id": "cluster-3",
+      "name": "亚洲数字货币联盟正式启动",
+      "nodes": [
+        "news-2026030421-002",
+        "news-2026030418-002",
+        "news-2026030417-002"
+      ],
+      "size": 3,
+      "density": 1.0
+    }
+  ],
+  "stats": {
+    "total_nodes": 15,
+    "total_links": 42,
+    "total_clusters": 3,
+    "strong_relations": 5,
+    "medium_relations": 0,
+    "weak_relations": 37
+  }
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美伊冲突实时监控 | Iran Conflict Monitor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        .crisis-high { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+        .crisis-medium { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
+        .crisis-low { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); }
+        .pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="crisis-high text-white py-6 px-4 shadow-lg">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold flex items-center gap-3">
+                        <span class="text-4xl">⚠️</span>
+                        美伊冲突实时监控
+                    </h1>
+                    <p class="text-red-100 mt-2 text-lg">
+                        Iran Conflict Monitor | 最后更新: <span id="update-time">2026-03-05 13:50</span>
+                    </p>
+                </div>
+                <div class="text-right">
+                    <div class="text-4xl font-bold">高</div>
+                    <div class="text-red-100">冲突等级</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Alert Banner -->
+    <div class="bg-red-600 text-white py-3 px-4">
+        <div class="max-w-7xl mx-auto flex items-center gap-3">
+            <span class="text-2xl pulse">🔴</span>
+            <div class="font-semibold">
+                紧急预警: 未来48-72小时为关键窗口期，关注伊朗代理人报复行动
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto p-4 space-y-6">
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+                <div class="text-gray-400 text-sm">伊朗伤亡</div>
+                <div class="text-3xl font-bold text-red-400">17</div>
+                <div class="text-xs text-gray-500">含3名高级指挥官</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+                <div class="text-gray-400 text-sm">以色列伤亡</div>
+                <div class="text-3xl font-bold text-orange-400">2</div>
+                <div class="text-xs text-gray-500">平民轻伤</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+                <div class="text-gray-400 text-sm">布伦特原油</div>
+                <div class="text-3xl font-bold text-yellow-400">$96.40</div>
+                <div class="text-xs text-green-400">+8.3% ↗</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+                <div class="text-gray-400 text-sm">军事事件</div>
+                <div class="text-3xl font-bold text-blue-400">2</div>
+                <div class="text-xs text-gray-500">过去24小时</div>
+            </div>
+        </div>
+
+        <!-- News Timeline -->
+        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                <span>📰</span> 最新动态时间线
+            </h2>
+            <div class="space-y-4" id="news-timeline">
+                <!-- News items will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Impact Analysis -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <span>📊</span> 影响维度分析
+                </h2>
+                <canvas id="impactChart" width="400" height="300"></canvas>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <span>🔗</span> 事件关联网络
+                </h2>
+                <div id="network-graph" class="h-80"></div>
+            </div>
+        </div>
+
+        <!-- Market Impact -->
+        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                <span>📈</span> 市场影响
+            </h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-gray-900 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm">原油价格</div>
+                    <div class="text-2xl font-bold text-yellow-400">$96.40</div>
+                    <div class="text-sm text-green-400">+8.3% (布伦特)</div>
+                    <div class="text-xs text-gray-500 mt-1">担忧霍尔木兹海峡封锁</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm">美股期货</div>
+                    <div class="text-2xl font-bold text-red-400">-340点</div>
+                    <div class="text-sm text-red-400">-0.8% (道指)</div>
+                    <div class="text-xs text-gray-500 mt-1">纳指 -1.2%</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm">黄金</div>
+                    <div class="text-2xl font-bold text-yellow-400">$2,180</div>
+                    <div class="text-sm text-green-400">+2.4%</div>
+                    <div class="text-xs text-gray-500 mt-1">避险需求上升</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- International Response -->
+        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                <span>🌍</span> 各方反应
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-blue-500">
+                    <div class="font-semibold text-blue-400">美国</div>
+                    <div class="text-sm text-gray-300 mt-2">支持以色列自卫权，航母向波斯湾移动，发布最高级别旅行警告</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-red-500">
+                    <div class="font-semibold text-red-400">伊朗</div>
+                    <div class="text-sm text-gray-300 mt-2">誓言"同等强度回击"，革命卫队进入全面战备，暗示封锁海峡</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-green-500">
+                    <div class="font-semibold text-green-400">中国</div>
+                    <div class="text-sm text-gray-300 mt-2">呼吁各方保持克制，通过对话解决争端，反对侵犯他国主权</div>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-purple-500">
+                    <div class="font-semibold text-purple-400">欧盟</div>
+                    <div class="text-sm text-gray-300 mt-2">启动紧急外交通道，博雷利计划赴德黑兰斡旋</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Source -->
+        <div class="text-center text-gray-500 text-sm py-4">
+            数据来源: Reuters, BBC, Al Jazeera, Bloomberg, 新华社 | 
+            基于 news-intelligence-hub 技能框架生成
+        </div>
+    </main>
+
+    <script>
+        // News data
+        const newsData = [
+            {
+                id: "ir-001",
+                title: "以色列空袭伊朗核设施外围基地",
+                summary: "以军出动F-35I战机，袭击伊斯法罕省军事目标，造成17人死亡",
+                source: "Reuters",
+                time: "2026-03-05 04:00",
+                heat: 98,
+                category: "military"
+            },
+            {
+                id: "ir-002",
+                title: "伊朗通过代理人报复，真主党发射火箭弹",
+                summary: "约85枚火箭弹射向以色列北部，铁穹系统拦截大部分",
+                source: "BBC",
+                time: "2026-03-05 08:30",
+                heat: 95,
+                category: "military"
+            },
+            {
+                id: "ir-003",
+                title: "布伦特原油飙升8.3%至$96.40",
+                summary: "市场担忧霍尔木兹海峡可能被封锁",
+                source: "Bloomberg",
+                time: "2026-03-05 09:15",
+                heat: 92,
+                category: "economic"
+            },
+            {
+                id: "ir-004",
+                title: "美国航母战斗群向波斯湾移动",
+                summary: "艾森豪威尔号部署调整，国务院发布最高级别旅行警告",
+                source: "Al Jazeera",
+                time: "2026-03-05 10:00",
+                heat: 90,
+                category: "diplomatic"
+            },
+            {
+                id: "ir-005",
+                title: "欧盟启动紧急外交通道斡旋",
+                summary: "博雷利计划赴德黑兰，中俄呼吁克制",
+                source: "Xinhua",
+                time: "2026-03-05 11:30",
+                heat: 85,
+                category: "diplomatic"
+            }
+        ];
+
+        // Render news timeline
+        function renderTimeline() {
+            const container = document.getElementById('news-timeline');
+            const categoryColors = {
+                military: 'bg-red-600',
+                diplomatic: 'bg-blue-600',
+                economic: 'bg-yellow-600'
+            };
+            const categoryLabels = {
+                military: '军事',
+                diplomatic: '外交',
+                economic: '经济'
+            };
+
+            container.innerHTML = newsData.map(news => `
+                <div class="flex gap-4 items-start p-4 bg-gray-900 rounded-lg hover:bg-gray-850 transition-colors">
+                    <div class="flex-shrink-0">
+                        <div class="w-2 h-full ${categoryColors[news.category]} rounded-full"></div>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="px-2 py-0.5 text-xs rounded ${categoryColors[news.category]} text-white">
+                                ${categoryLabels[news.category]}
+                            </span>
+                            <span class="text-gray-400 text-sm">${news.time}</span>
+                            <span class="text-yellow-400 text-sm">🔥 ${news.heat}</span>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-1">${news.title}</h3>
+                        <p class="text-gray-400 text-sm">${news.summary}</p>
+                        <div class="text-gray-500 text-xs mt-2">来源: ${news.source}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render impact chart
+        function renderImpactChart() {
+            const ctx = document.getElementById('impactChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['军事', '外交', '经济', '人道主义'],
+                    datasets: [{
+                        label: '当前影响评估',
+                        data: [8.5, 8, 9.5, 6],
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        pointBackgroundColor: 'rgba(239, 68, 68, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(239, 68, 68, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            pointLabels: { color: 'rgba(255, 255, 255, 0.7)' },
+                            ticks: { color: 'rgba(255, 255, 255, 0.5)', backdropColor: 'transparent' },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: 'rgba(255, 255, 255, 0.7)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render network graph
+        function renderNetworkGraph() {
+            const width = document.getElementById('network-graph').clientWidth;
+            const height = 320;
+
+            const nodes = [
+                { id: "ir-001", name: "以色列空袭", group: 1 },
+                { id: "ir-002", name: "真主党报复", group: 2 },
+                { id: "ir-003", name: "油价飙升", group: 3 },
+                { id: "ir-004", name: "美军部署", group: 1 },
+                { id: "ir-005", name: "欧盟斡旋", group: 4 }
+            ];
+
+            const links = [
+                { source: "ir-001", target: "ir-002", value: 0.95 },
+                { source: "ir-001", target: "ir-003", value: 0.88 },
+                { source: "ir-002", target: "ir-004", value: 0.82 },
+                { source: "ir-004", target: "ir-005", value: 0.75 }
+            ];
+
+            const svg = d3.select("#network-graph")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            const simulation = d3.forceSimulation(nodes)
+                .force("link", d3.forceLink(links).id(d => d.id))
+                .force("charge", d3.forceManyBody().strength(-300))
+                .force("center", d3.forceCenter(width / 2, height / 2));
+
+            const link = svg.append("g")
+                .selectAll("line")
+                .data(links)
+                .enter().append("line")
+                .attr("stroke", "#4b5563")
+                .attr("stroke-width", d => d.value * 3);
+
+            const node = svg.append("g")
+                .selectAll("g")
+                .data(nodes)
+                .enter().append("g")
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
+
+            node.append("circle")
+                .attr("r", 20)
+                .attr("fill", d => {
+                    const colors = ["#ef4444", "#3b82f6", "#eab308", "#8b5cf6"];
+                    return colors[d.group - 1];
+                });
+
+            node.append("text")
+                .text(d => d.name)
+                .attr("x", 25)
+                .attr("y", 5)
+                .attr("fill", "white")
+                .attr("font-size", "12px");
+
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                node.attr("transform", d => `translate(${d.x},${d.y})`);
+            });
+
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTimeline();
+            renderImpactChart();
+            renderNetworkGraph();
+        });
+    </script>
+</body>
+</html>

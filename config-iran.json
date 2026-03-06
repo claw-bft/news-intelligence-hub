@@ -1,0 +1,82 @@
+{
+  "name": "news-intelligence-hub-iran",
+  "version": "1.0.0",
+  "description": "美伊冲突及中东局势新闻抓取与分析系统",
+  "schedule": "*/10 * * * *",
+  "sources": [
+    {
+      "name": "reuters-middle-east",
+      "url": "https://www.reuters.com/world/middle-east/",
+      "type": "news",
+      "priority": 1,
+      "keywords": ["Iran", "Israel", "US", "Middle East", "conflict", "oil"]
+    },
+    {
+      "name": "bbc-middle-east",
+      "url": "https://www.bbc.com/news/world/middle_east",
+      "type": "news",
+      "priority": 1,
+      "keywords": ["Iran", "Israel", "Gaza", "Lebanon", "Hamas", "Hezbollah"]
+    },
+    {
+      "name": "al-jazeera",
+      "url": "https://www.aljazeera.com/middle-east/",
+      "type": "news",
+      "priority": 1,
+      "keywords": ["Iran", "Israel", "Palestine", "Yemen", "Houthis"]
+    },
+    {
+      "name": "bloomberg-energy",
+      "url": "https://www.bloomberg.com/energy",
+      "type": "finance",
+      "priority": 2,
+      "keywords": ["oil", "Brent", "WTI", "Hormuz", "OPEC"]
+    },
+    {
+      "name": "xinhua-international",
+      "url": "http://www.xinhuanet.com/world/",
+      "type": "news",
+      "priority": 2,
+      "keywords": ["伊朗", "以色列", "中东", "局势", "冲突"]
+    }
+  ],
+  "analysis": {
+    "correlation": {
+      "enabled": true,
+      "method": "semantic-similarity",
+      "threshold": 0.7,
+      "topics": ["military", "diplomacy", "energy", "market"]
+    },
+    "impact": {
+      "enabled": true,
+      "dimensions": ["military", "diplomatic", "economic", "humanitarian"],
+      "scoreRange": [1, 10]
+    },
+    "trend": {
+      "enabled": true,
+      "window": "6h",
+      "prediction": "immediate",
+      "alertThreshold": 8.5
+    }
+  },
+  "visualization": {
+    "type": "crisis-dashboard",
+    "mobileFirst": true,
+    "charts": [
+      "conflict-timeline",
+      "casualty-tracker",
+      "oil-price-impact",
+      "diplomatic-heatmap"
+    ],
+    "alerts": {
+      "enabled": true,
+      "channels": ["webhook", "email"],
+      "triggers": ["major-attack", "casualties", "oil-spike", "diplomatic-breakthrough"]
+    }
+  },
+  "deployment": {
+    "target": "vercel",
+    "autoDeploy": true,
+    "domain": "iran-conflict-monitor.vercel.app"
+  }
+}

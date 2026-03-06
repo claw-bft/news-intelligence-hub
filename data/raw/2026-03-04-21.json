@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-03-04T21:19:04.737793",
+  "news": [
+    {
+      "id": "news-2026030421-004",
+      "title": "欧盟通过《人工智能法案》最终版本",
+      "summary": "欧盟议会正式通过全球首部综合性 AI 监管法规，对高风险 AI 系统实施严格合规要求，违规最高罚款全球营收 7%。",
+      "source": "European Commission",
+      "category": "政治",
+      "heat": 96.7,
+      "impact": {
+        "social": 80,
+        "economic": 85,
+        "political": 95,
+        "tech": 90
+      },
+      "keywords": [
+        "欧盟",
+        "AI法案",
+        "监管",
+        "合规"
+      ],
+      "published_at": "2026-03-04T20:34:04.737851",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "id": "news-2026030421-001",
+      "title": "OpenAI GPT-5 发布：多模态能力重大突破",
+      "summary": "OpenAI 正式发布 GPT-5，支持文本、图像、音频、视频多模态输入，推理能力较 GPT-4 提升 40%，代码生成准确率达 92%。",
+      "source": "OpenAI Blog",
+      "category": "科技",
+      "heat": 96.0,
+      "impact": {
+        "social": 90,
+        "economic": 85,
+        "political": 70,
+        "tech": 99
+      },
+      "keywords": [
+        "OpenAI",
+        "GPT-5",
+        "多模态",
+        "AI"
+      ],
+      "published_at": "2026-03-04T21:19:04.737813",
+      "url": "https://openai.com/blog/gpt-5"
+    },
+    {
+      "id": "news-2026030421-003",
+      "title": "特斯拉 FSD V12 正式推送，端到端神经网络上车",
+      "summary": "特斯拉开始向北美用户推送 FSD V12 版本，采用端到端神经网络，城市道路自动驾驶能力大幅提升。",
+      "source": "Tesla",
+      "category": "科技",
+      "heat": 93.2,
+      "impact": {
+        "social": 85,
+        "economic": 90,
+        "political": 65,
+        "tech": 95
+      },
+      "keywords": [
+        "特斯拉",
+        "FSD",
+        "自动驾驶",
+        "神经网络"
+      ],
+      "published_at": "2026-03-04T20:49:04.737839",
+      "url": "https://www.tesla.com/blog/fsd-v12-rollout"
+    },
+    {
+      "id": "news-2026030421-005",
+      "title": "英伟达发布 Blackwell 架构 GPU，AI 算力提升 30 倍",
+      "summary": "NVIDIA 在 GTC 大会发布新一代 Blackwell 架构 GPU，专为生成式 AI 设计，训练大模型速度提升 4 倍，能效提升 25 倍。",
+      "source": "NVIDIA News",
+      "category": "科技",
+      "heat": 89.2,
+      "impact": {
+        "social": 70,
+        "economic": 92,
+        "political": 60,
+        "tech": 99
+      },
+      "keywords": [
+        "NVIDIA",
+        "Blackwell",
+        "GPU",
+        "AI算力"
+      ],
+      "published_at": "2026-03-04T20:19:04.737860",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-gpu"
+    },
+    {
+      "id": "news-2026030421-002",
+      "title": "美联储宣布维持利率不变，暗示年内降息",
+      "summary": "美联储 FOMC 会议决定维持基准利率 5.25%-5.50% 不变，但点阵图显示多数官员预计 2024 年内将降息 3 次。",
+      "source": "Reuters",
+      "category": "经济",
+      "heat": 88.0,
+      "impact": {
+        "social": 75,
+        "economic": 98,
+        "political": 80,
+        "tech": 60
+      },
+      "keywords": [
+        "美联储",
+        "利率",
+        "降息",
+        "FOMC"
+      ],
+      "published_at": "2026-03-04T21:04:04.737827",
+      "url": "https://www.reuters.com/markets/us/fed-holds-rates-steady-2024-03-04/"
+    }
+  ],
+  "stats": {
+    "total": 5,
+    "categories": {}
+  }
+}
